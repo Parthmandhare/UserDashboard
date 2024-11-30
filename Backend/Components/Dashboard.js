@@ -4,7 +4,7 @@ const user = require("../DB");
 
 const router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/", isThere, async (req, res) => {
   try {
     const data = await user.find();
     res.status(200).json({ data });
